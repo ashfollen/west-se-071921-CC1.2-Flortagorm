@@ -7,10 +7,9 @@ const fgLikes = document.getElementById('fg-likes');
 const fgComments = document.getElementById('fg-comments');
 const likeButton = document.getElementById('like-button');
 const commentForm = document.getElementById('comment-form');
-
-//event listeners
 let likes = 0;
 
+//event listeners
 likeButton.addEventListener('click', () => {
     likes += 1;
     renderLikes();
