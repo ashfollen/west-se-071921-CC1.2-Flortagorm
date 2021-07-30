@@ -1,3 +1,5 @@
+//variable declarations
+
 const url = "https://distinct-vaulted-freesia.glitch.me/image"
 const fgTitle = document.getElementById('fg-title');
 const fgImage = document.getElementById('fg-image');
@@ -6,6 +8,7 @@ const fgComments = document.getElementById('fg-comments');
 const likeButton = document.getElementById('like-button');
 const commentForm = document.getElementById('comment-form');
 
+//event listeners
 let likes = 0;
 
 likeButton.addEventListener('click', () => {
@@ -19,12 +22,14 @@ commentForm.addEventListener('submit', (e) => {
     e.target.comment.value = '';
 })
 
-
+//get data
 fetch(url)
 .then(resp => resp.json())
-.then((data) => renderImage(data))
+.then((data) => renderPost(data))
 
-function renderImage(data) {
+//functions 
+
+function renderPost(data) {
     console.log(data);
     fgTitle.textContent = data.title;
     fgImage.src = data.image;
